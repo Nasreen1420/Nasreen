@@ -5,8 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.project.model.Bus;
 import com.project.model.User;
 import com.project.repository.UserRepository;
 
@@ -16,8 +14,7 @@ public class UserController
 	@Autowired
 	private UserRepository urepo;
 	
-	@RequestMapping("/")	
-	
+	@RequestMapping("/")
 	public String landing()
 	{
 		return "home.jsp";
@@ -31,7 +28,7 @@ public class UserController
 //		return "insert.jsp";
 //	}
 	
-	@RequestMapping("/register1")
+	@RequestMapping("/register")
 	public String register(@ModelAttribute User ob)
 	{
 		urepo.save(ob);
